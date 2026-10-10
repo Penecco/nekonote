@@ -10,10 +10,10 @@ const zenMaruGothic = Zen_Maru_Gothic({
 
 export const metadata: Metadata = {
   title: "ねこのてコラボ -女性V向けコラボ相手紹介所-",
-  description: "コラボ相手探し、「ねこのて」お貸しします。中の人が女性の、個人勢VTuberさん限定。β版は無料です。",
+  description: "コラボ相手探し、「ねこのて」お貸しします。女性個人勢VTuberさん限定。",
   openGraph: {
     title: "ねこのてコラボ -女性V向けコラボ相手紹介所-",
-    description: "コラボ相手探し、「ねこのて」お貸しします。中の人が女性の、個人勢VTuberさん限定。β版は無料です。",
+    description: "コラボ相手探し、「ねこのて」お貸しします。女性個人勢VTuberさん限定。",
     url: "https://nekonote-omega.vercel.app/",
     siteName: "ねこのてコラボ",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ねこのてコラボ -女性V向けコラボ相手紹介所-",
-    description: "コラボ相手探し、「ねこのて」お貸しします。",
+    description: "コラボ相手探し、「ねこのて」お貸しします。女性個人勢VTuberさん限定。",
     images: ["/ogp.png"],
   },
 };
