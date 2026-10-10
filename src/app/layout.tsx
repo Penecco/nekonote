@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ねこのてコラボ -女性V向けコラボ相手紹介所-",
     description: "コラボ相手探し、「ねこのて」お貸しします。中の人が女性の、個人勢VTuberさん限定。β版は無料です。",
-    url: "https://*.vercel.app",
+    url: "https://nekonote-omega.vercel.app/",
     siteName: "ねこのてコラボ",
     images: [
       {
