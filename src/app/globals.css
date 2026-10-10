@@ -1,0 +1,471 @@
+:root {
+  /* メインの色（アイコンに合わせたピンク＆水色ベース） */
+  --color-primary: #F2C8C2; /* パステルピンク */
+  --color-secondary: #A9D1E6; /* パステルブルー */
+  --color-text: #4A2E1B; /* 焦げ茶色 */
+  --color-bg: #ffffff; /* ベース背景 */
+  --color-bg-alt: #fcfcfc; /* セクション代替背景 */
+  --color-white: #ffffff;
+  
+  --radius-card: 20px;
+  --radius-btn: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-zen-maru), "Hiragino Rounded W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 共通コンテナ */
+.container {
+  max-width: 800px; /* PC向けに少し広く */
+  margin: 0 auto;
+  padding: 0 20px;
+  /* スマホでのみ横スクロール防止 */
+  width: 100%;
+}
+
+section {
+  padding: 70px 0;
+  width: 100%;
+}
+
+/* 代替背景色でセクションの区切りを明確に */
+.section-bg-light {
+  background-color: rgba(242, 200, 194, 0.15); /* パステルピンクをごく薄く */
+}
+
+h2.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 40px;
+  color: var(--color-text);
+}
+h2.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: var(--color-secondary);
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+/* 汎用センタリング */
+.text-center {
+  text-align: center;
+}
+
+/* ボタン */
+.btn-primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: var(--radius-btn);
+  box-shadow: 0 4px 10px rgba(242, 200, 194, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 54px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  margin: 0 auto;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(242, 200, 194, 0.6);
+}
+
+/* セクション個別 */
+.hero {
+  text-align: center;
+  padding: 100px 0 80px;
+  /* ヒーローはフラットな薄いピンク背景 */
+  background-color: rgba(242, 200, 194, 0.15);
+}
+.hero .subtitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #888;
+  margin-bottom: 15px;
+}
+.hero .title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+.hero .catchcopy {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.hero .note {
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border, #eee);
+  border-radius: var(--radius-card);
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.feature-list, .trouble-list, .rule-list, .check-list {
+  list-style: none;
+}
+/* リスト全体をカードの中央に置くための指定 */
+.trouble-list, .check-list {
+  display: inline-block;
+  text-align: left;
+}
+
+.trouble-list li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-align: left;
+}
+.trouble-list li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+  font-weight: bold;
+}
+.card .conclusion {
+  margin-top: 30px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.35rem; /* 一回り大きく */
+  color: var(--color-text);
+  display: block;
+}
+
+.feature-card {
+  margin-bottom: 24px;
+}
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 見出しも中央寄せ */
+  gap: 8px;
+}
+.feature-card h3::before {
+  content: "🐾";
+  font-size: 1.4rem;
+}
+.feature-card p {
+  text-align: center; /* 中央揃えに変更 */
+}
+
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.step-item {
+  display: flex;
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  flex: 1;
+}
+.step-num {
+  font-weight: 700;
+  color: var(--color-secondary);
+  font-size: 1.6rem;
+  min-width: 50px;
+}
+.step-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+.step-content p {
+  font-size: 1.05rem;
+  color: #555;
+}
+
+.check-list li {
+  padding-left: 1.8em;
+  position: relative;
+  margin-bottom: 15px;
+  text-align: left;
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.25em; /* 文字の大きさに合わせて下にずらす */
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* アコーディオン */
+details {
+  background: var(--color-white);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+summary {
+  padding: 18px 24px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: var(--color-secondary);
+  transition: transform 0.2s;
+}
+details[open] summary::after {
+  content: "−";
+}
+.details-content {
+  padding: 0 24px 24px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.profile-card {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.profile-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.profile-title {
+  font-size: 1.5rem; /* 名前を一回り大きく */
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.profile-role {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+.profile-msg {
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  text-align: center; /* 中央揃えに変更 */
+}
+.profile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+.profile-links a {
+  color: #333;
+  text-decoration: underline;
+  text-decoration-color: var(--color-secondary);
+  font-size: 0.9rem;
+}
+.profile-note {
+  font-size: 0.8rem;
+  color: #888;
+  background: rgba(0,0,0,0.03);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.bottom-cta {
+  text-align: center;
+}
+.bottom-cta p {
+  margin-bottom: 25px;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.bottom-cta .btn-primary {
+  font-size: 1.4rem;
+  padding: 20px 45px;
+  max-width: 400px;
+  min-height: 64px;
+}
+
+footer {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 0.85rem;
+  color: #888;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border, #eee);
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  text-decoration: underline;
+  color: #666;
+}
+
+/* アニメーション用 */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 固定申込ボタン (スマホ用) */
+.fixed-btn-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid var(--color-border, #eee);
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+.fixed-btn-wrap .btn-primary {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 24px;
+  min-height: 48px;
+  font-size: 1rem;
+}
+body {
+  padding-bottom: 80px; /* 固定ボタンの余白 */
+}
+
+/* PC向けレスポンシブ (768px以上) */
+@media (min-width: 768px) {
+  /* PCでは文字サイズを全体的に大きくする */
+  body {
+    font-size: 1.3rem;
+    padding-bottom: 0;
+  }
+  /* 横幅をもう少し使って広く見せる */
+  .container {
+    max-width: 1200px;
+  }
+  h2.section-title {
+    font-size: 2rem; /* タイトルは大きすぎないように戻す */
+  }
+  /* コンテナに合わせてカード幅も広げる */
+  .card {
+    font-size: 1.3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* ヒーローをより大きく */
+  .hero {
+    padding: 150px 0 120px;
+  }
+  .hero .title {
+    font-size: 3rem; /* タイトルは戻す */
+  }
+  
+  /* PCでは小さい文字（補足や説明文）もしっかり大きくする */
+  .hero .note,
+  .details-content,
+  .profile-msg,
+  .profile-role,
+  .profile-note {
+    font-size: 1.15rem;
+  }
+  
+  /* 参加の流れ（STEP）の文字をPCでもっと大きく */
+  .step-num {
+    font-size: 1.8rem;
+  }
+  .step-content h3 {
+    font-size: 1.4rem;
+  }
+  .step-content p {
+    font-size: 1.25rem;
+  }
+  
+  /* 特徴カードの見出しをPCでも大きくする */
+  .feature-card h3 {
+    font-size: 1.6rem;
+  }
+  .feature-card h3::before {
+    font-size: 1.7rem;
+  }
+  
+  /* ページ下部の申し込みセクションをPCでもっと大きく */
+  .bottom-cta p {
+    font-size: 1.5rem;
+  }
+  .bottom-cta .btn-primary {
+    font-size: 1.7rem;
+    padding: 24px 60px;
+    max-width: 500px;
+  }
+
+  /* お悩みカードの中身を中央寄せにする */
+  .text-center-pc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* リンクを横並びに */
+  .profile-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* PCでは固定ボタンを非表示にし、デザインをスッキリさせる */
+  .fixed-btn-wrap {
+    display: none;
+  }
+}
+
